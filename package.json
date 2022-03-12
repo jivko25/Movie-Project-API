@@ -4,7 +4,7 @@
   "description": "movie-rest-api",
   "main": "index.js",
   "engines": {
-    "node" : "14.x"
+    "node": "14.x"
   },
   "scripts": {
     "start": "node index.js"
@@ -20,6 +20,12 @@
   },
   "homepage": "https://github.com/jivko25/movie-api#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "@hapi/joi": "^17.1.1",
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.4",
+    "nodemon": "^2.0.15",
+    "serverless-http": "^2.7.0"
   }
 }
