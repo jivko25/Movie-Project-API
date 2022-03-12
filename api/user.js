@@ -7,12 +7,12 @@ const secret = 'ndaisndiasnduinas9j32984u910sandjiasn';
 
 router.post('/login', async (req, res) => {
     //Validate body
-    const error = loginValidate(req.body);
-    if(error) return res.status(400).json(error);
+    // const error = loginValidate(req.body);
+    // if(error) return res.status(400).json(error);
 
     //Check if email exist
-    const userToLogin = await User.findOne({email : req.body.email});
-    if(!userToLogin) return res.status(400).json('Email does not exist!');
+    // const userToLogin = await User.findOne({email : req.body.email});
+    // if(!userToLogin) return res.status(400).json('Email does not exist!');
 
     //Check if password match
     // const isValidPassword = await bcrypt.compare(req.body.password, userToLogin.password);
