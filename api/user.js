@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const User = require('../models/UserModel');
 
-router('/login', (req, res) => {
-    res.send('test');
+router.get('/login', (req, res) => {
+    res.json('test');
 })
 
 module.exports = router;
