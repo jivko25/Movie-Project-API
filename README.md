@@ -2,8 +2,6 @@
 
 ## Description
 
-This project is part of Movie Project.
-
 **Link** : https://movie-api-blue.vercel.app
 
 ### Why this project is made
@@ -18,13 +16,16 @@ This project is back-end part Movie Project.
 * Mongoose
 * JsonWebToken(jwt)
 * @hapi/joi
+* This app is deployed on vercel ptalform
 
-### How to start project
+### How to start this project localy
+
+* Download repo
+* Use this commands to run app
 
 ```
-cd server
 npm i
-node index.js
+npm run start
 ```
 
 ## How to use
