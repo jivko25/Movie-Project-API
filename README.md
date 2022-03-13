@@ -1,4 +1,4 @@
-# Movie-API
+# Movie Project REST API
 
 ## Description
 
