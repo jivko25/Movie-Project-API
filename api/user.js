@@ -2,6 +2,7 @@ const router = require('express').Router();
 const User = require('../models/UserModel');
 const loginValidate = require('../validation/loginValidation');
 const registerValidate = require('../validation/registerValidation');
+const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const secret = 'ndaisndiasnduinas9j32984u910sandjiasn';
