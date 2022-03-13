@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Movie = require('../models/MovieModel');
 // const verify = require('./verifyToken');
-// const validateCreateMovie = require('../validation/createMovieValidation');
+const validateCreateMovie = require('../validation/movieValidation');
 
 
 //Get all movies
@@ -19,8 +19,8 @@ router.get('/:id', async (req, res) => {
 //Post movie
 router.post('/', async (req, res) => {
 
-    // const error = validateCreateMovie(req.body);
-    // if(error) return res.status(400).send(error);
+    const error = validateCreateMovie(req.body);
+    if(error) return res.status(400).send(error);
     
     const movie = new Movie({
         ownerId : req.body.ownerId,
