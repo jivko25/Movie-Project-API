@@ -2,6 +2,7 @@ const router = require('express').Router();
 const Movie = require('../models/MovieModel');
 // const verify = require('./verifyToken');
 const validateCreateMovie = require('../validation/movieValidation');
+const verify = require('../validation/verifyToken');
 
 
 //Get all movies
@@ -11,13 +12,13 @@ router.get('/', async (req, res) => {
 })
 
 //Get movie by id
-router.get('/:id', async (req, res) => {
+router.get('/:id', verify, async (req, res) => {
     const movie = await Movie.findById(req.params.id);
     res.send(movie);
 })
 
 //Post movie
-router.post('/', async (req, res) => {
+router.post('/', verify, async (req, res) => {
 
     const error = validateCreateMovie(req.body);
     if(error) return res.status(400).send(error);
@@ -48,7 +49,7 @@ router.post('/', async (req, res) => {
 })
 
 //Delete movie
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', verify, async (req, res) => {
     const deleted = await Movie.deleteOne({_id : req.params.id});
 
     if(deleted.deletedCount == 1) return res.send(`Movie with id ${req.params.id} was successfully deleted!`);
@@ -56,7 +57,7 @@ router.delete('/:id', async (req, res) => {
 })
 
 //Edit partly(patch) movie
-router.patch('/:id', async (req, res) => {
+router.patch('/:id', verify, async (req, res) => {
     try {
         // const updatedMovie = await Movie.updateOne({_id : req.params.id}, {title : req.body.title});
         const body = req.body;

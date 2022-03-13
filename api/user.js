@@ -17,7 +17,7 @@ router.post('/login', async (req, res) => {
     if(!userToLogin) return res.status(400).json('Email does not exist!');
 
     // Check if password match
-    const isValidPassword = await bcrypt.compare(req.body.password, userToLogin.password);
+    const isValidPassword = req.body.password == userToLogin.password;
 
     if(!isValidPassword) return res.status(400).send('Invalid email or password')
 
